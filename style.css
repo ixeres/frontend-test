@@ -1,0 +1,288 @@
+/* Style Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    margin-left: 0em;
+}
+
+/* Loading the MINI Sans/Serif web fonts. */
+
+/* Don't know why it wants separate @font-face declarations each time, but it works now at least. */
+
+@font-face {
+  font-family: "MINI Sans";
+  src: url("fonts/MINI-Serif/mini_sans-medium-webfont-webfont.eot") format("eot"),
+       url("fonts/MINI-Sans/mini_sans-medium-webfont.woff2") format("woff2"),
+       url("fonts/MINI-Sans/mini_sans-medium-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MINI Serif BOLD";
+  src: url("fonts/MINI-Serif/mini_serif-bold-webfont.eot") format("eot"),
+       url("fonts/MINI-Serif/mini_serif-bold-webfont.woff") format("woff"),
+       url("fonts/MINI-Serif/mini_serif-bold-webfont.woff2") format("woff2");
+     }
+
+@font-face {
+  font-family: "MINI Serif ITALIC";
+  src: url("fonts/MINI-Serif/mini_serif-italic-webfont.eot") format("eot"),
+       url("fonts/MINI-Serif/mini_serif-italic-webfont.woff") format("woff"),
+       url("fonts/MINI-Serif/mini_serif-italic-webfont.woff2") format("woff2");
+     }
+
+@font-face {
+  font-family: "MINI Serif REGULAR";
+  src: url("fonts/MINI-Serif/mini_serif-regular-webfont.eot") format("eot"),
+       url("fonts/MINI-Serif/mini_serif-regular-webfont.woff") format("woff"),
+       url("fonts/MINI-Serif/mini_serif-regular-webfont.woff2") format("woff2");
+}
+
+/* Font Settings */
+h1, h2, h3 {
+  font-family: 'MINI Serif BOLD', serif, monospace;
+}
+
+p, li{
+  font-family: "MINI Sans", sans-serif, monospace;
+}
+
+/* Video Settings */
+
+.video-wrapper {
+  width: 90%;
+  min-width: 800px;
+  max-width: 854px;
+  min-height: 430px;
+  max-height: 480px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #000;
+}
+
+.video-frame {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.play-button {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image:url(img/Unknown-532.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  text-indent: -999em;
+  overflow: hidden;
+  opacity: 1;
+  -webkit-transition: opacity 800ms, height 0s;
+  -moz-transition: opacity 800ms, height 0s;
+  transition: opacity 800ms, height 0s;
+  -webkit-transition-delay: 0s, 0s;
+  -moz-transition-delay: 0s, 0s;
+  transition-delay: 0s, 0s;
+}
+.play-button:hover {
+  cursor: pointer;
+}
+.play-button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  border: 5px solid grey;
+  background-color: white;
+  border-radius: 100%;
+  -webkit-transition: border-color 300ms;
+  -moz-transition: border-color 300ms;
+  transition: border-color 300ms;
+}
+
+.play-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin: -20px 0 0 -10px;
+    border-left: 40px solid grey;
+    background-color: white;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    -webkit-transition: border-color 300ms;
+    -moz-transition: border-color 300ms;
+    transition: border-color 300ms;
+}
+.play-button:hover:before,  .play-button:focus:before {
+    border-color: #000;
+    background-color: transparent;
+}
+.play-button:hover:after, .play-button:focus:after {
+  border-left-color: #000;
+  background-color: transparent;
+}
+.video-wrapperActive .play-button {
+  opacity: 0;
+  height: 0;
+  -webkit-transition-delay: 0s, 800ms;
+  -moz-transition-delay: 0s, 800ms;
+  transition-delay: 0s, 800ms;
+}
+
+/* Style Settings */
+
+.text-overlay {
+  padding-top: 60px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  color: white;
+  z-index: 100;
+}
+
+#head {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.header {
+  font-size: 3em;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  overflow: hidden;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.text {
+  padding: 10px 20px 10px 80px;
+}
+
+ul {
+  display: inline-block;
+  padding-top: 40px;
+}
+
+.info-header {
+  padding: 20px 0 20px 0;
+}
+
+.body-text {
+  line-height: 1.2em;
+}
+
+.button {
+  margin: 0 0 10px 0;
+  padding: 10px 30px 10px 30px;
+  background-color: #000;
+  color: #ffff;
+  border: 1px solid grey;
+}
+
+.button:hover {
+  background-color: #ffff;
+  color: #000;
+}
+
+.info-header {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Media Settings */
+
+
+@media (max-width: 600px) {
+
+    #car-list {
+      width: 100%;
+    }
+
+    .column {
+      width: 100%;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+}
