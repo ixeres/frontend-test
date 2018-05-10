@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-// Car listings
+// Car listings AJAX/JSON Query
+
   $(window).scroll(function() {
       if($(window).scrollTop() == $(document).height() - $(window).height()) {
         var rootURL = 'test.json'
@@ -29,13 +30,15 @@ $(document).ready(function () {
       };
     });
 
-// Youtube Stuff
+// Youtube Video Embed
 
 $(document).on('click','.play-button',function(e) {
   e.preventDefault();
+  // Prevents default behaviour on YouTube play function
   var button = $(this);
-  $('.text-overlay').fadeOut()
-  var wrapper = button.closest('.video-wrapper');
+  var wrapper = $('.video-wrapper');
+  wrapper.fadeOut()
+  // Fades out overlay text/video thumbnail/play button on click
   videoPlay(wrapper);
 });
 function videoPlay(wrapper) {
@@ -43,5 +46,6 @@ function videoPlay(wrapper) {
   var src = iframe.data('src');
   wrapper.addClass('video-wrapperActive');
   iframe.attr('src',src);
+  // Swaps iframe attributes in HTML from data-src to src, effectively making the video autoplay when js button event is triggered.
 }
 });

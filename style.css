@@ -103,13 +103,14 @@ p, li{
 
 .video-wrapper {
   width: 90%;
-  min-width: 800px;
+  min-width: 400px;
   max-width: 854px;
-  min-height: 430px;
+  height: 430px;
   max-height: 480px;
   margin: 0 auto;
   position: relative;
   background-color: #000;
+  z-index: 100;
 }
 
 .video-frame {
@@ -267,7 +268,6 @@ ul {
   font-size: 24px;
   font-weight: 600;
 }
-
 /* Media Settings */
 
 
