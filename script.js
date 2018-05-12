@@ -36,12 +36,11 @@ $(document).on('click','.play-button',function(e) {
   e.preventDefault();
   // Prevents default behaviour on YouTube play function
   var wrapper = $('.video-wrapper');
-  // Fades out overlay text/video thumbnail/play button on click
   videoPlay(wrapper);
 });
 function videoPlay(frame) {
   var src = $('.video-placeholder');
   src.replaceWith("<iframe class='video-frame video' frameborder='0' allowTransparency='true' src='https://www.youtube.com/embed/Ldjmb15Jsx0?autoplay=1&modestbranding=1&rel=0&showinfo=0&color=white'></iframe>");
-  // Swaps iframe attributes in HTML from data-src to src, effectively making the video autoplay when js button event is triggered.
+  // Swaps attributes in HTML, replacing placeholder div with iframe HTML, effectively making the video autoplay when js button event is triggered.
 }
 });
