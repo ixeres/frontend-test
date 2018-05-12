@@ -108,10 +108,7 @@ li{
 
 .video-wrapper {
   width: 90%;
-  min-width: 400px;
-  max-width: 854px;
   height: 430px;
-  max-height: 480px;
   margin: 0 auto;
   position: relative;
   background-color: #000;
@@ -135,13 +132,13 @@ li{
   left: 0px;
   width: 100%;
   height: 100%;
-  background-image:url(img/Unknown-532.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   border: none;
   text-indent: -999em;
   overflow: hidden;
   opacity: 1;
+  background-image:url(img/Unknown-532.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   -webkit-transition: opacity 800ms, height 0s;
   -moz-transition: opacity 800ms, height 0s;
   transition: opacity 800ms, height 0s;
@@ -288,7 +285,18 @@ ul {
 /* Media Settings */
 
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
+
+    .header, .subheader{
+      font-size: 24px;
+      padding: 0 0 0 0;
+    }
+
+    .video-frame, .video-wrapper, .play-button {
+      width: 90%;
+      height: 300px;
+      width: 400px;
+    }
 
     #car-list {
       width: 100%;
@@ -314,5 +322,38 @@ ul {
     .text {
       padding: 20px 20px 20px 20px;
     }
+
+  @media (max-width: 400px) {
+
+      .video-frame, .video-wrapper, .play-button {
+      height: 200px;
+      width: 300px;
+    }
+
+      .subheader {
+        font-size: 16px;
+      }
+
+      .header {
+        font-size: 32px;
+      }
+
+      .info-header {
+        font-size: 20px;
+        padding-top: 0px;
+      }
+
+      .body-text {
+        font-size: 16px;
+      }
+
+      .button-list {
+        padding-left: 0px;
+      }
+
+      .button {
+        margin-right: 0px;
+      }
+  }
 
 }
