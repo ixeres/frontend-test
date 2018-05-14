@@ -100,7 +100,7 @@ p {
   font-size: 14px;
 }
 
-li{
+.button {
   font-family: "MINI Sans", sans-serif, monospace;
 }
 
@@ -276,6 +276,10 @@ ul {
 }
 
 /* AJAX JSON Response Styles */
+
+#details {
+  font-family: "MINI Serif REGULAR", serif, monospace;
+}
 
 #name {
   text-decoration: underline;
