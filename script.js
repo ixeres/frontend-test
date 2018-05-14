@@ -2,8 +2,13 @@ $(document).ready(function () {
 
 // Car listings AJAX/JSON
 
-  $(window).scroll(function() {
-      if($(window).scrollTop() == $(document).height() - $(window).height()) {
+
+var no=1;
+$(window).scroll(function () {
+    if(no==1)
+    {
+        if ($(window).height() + $(window).scrollTop() == $(document).height()) {
+            no=2;
         var rootURL = 'http://localhost:8888/test.json'
         $.ajax({
         url: rootURL,
@@ -30,7 +35,8 @@ $(document).ready(function () {
       }).always(function() {
         console.log('Some stuff happened. Now it is done.')
       });
-      };
+    }
+        }
     });
 
 // Youtube Video Embed
