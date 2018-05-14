@@ -4,23 +4,26 @@ $(document).ready(function () {
 
   $(window).scroll(function() {
       if($(window).scrollTop() == $(document).height() - $(window).height()) {
-        var rootURL = 'test.json'
+        var rootURL = 'http://localhost:8888/test.json'
         $.ajax({
         url: rootURL,
         method: 'GET',
-        dataType: 'html'
+        dataType: 'json'
       }).done(function (responseData) {
-        console.log((responseData));
-        $('#car-name').append(responseData.Name);
-        $('#car-price').append(responseData.Price);
-        $('#car-photo').append(responseData.Photo);
-        $('#retailer').append(responseData.Retailer);
-        $('#kilometres').append(responseData.Kilometres);
-        $('#transmission').append(responseData.Transmission);
-        $('#exterior').append(responseData.Exterior);
-        $('#interior').append(responseData.Interior);
-        $('#vin').append(responseData.VIN);
-        $('#drive-train').append(responseData.DriveTrain);
+        var listings = responseData.listings;
+        for (var i = 0; i < listings.length; i++) {
+          var listing = $('#car-list');
+          $('#name').append(listings[i].Name);
+          $('#price').append(listings[i].Price);
+          $('#photo').append('<img>' + listings[i].Photo + '</img>');
+          $('#retailer').append(listings[i].Retailer);
+          $('#kilometres').append(listings[i].Kilometres);
+          $('#transmission').append(listings[i].Transmission);
+          $('#exterior').append(listings[i].Exterior);
+          $('#interior').append(listings[i].Interior);
+          $('#vin').append(listings[i].VIN);
+          $('#drive-train').append(listings[i].DriveTrain);
+        }
       }).fail(function(responseData) {
         console.log('FAIL. You dun goofed!');
       $('#car-list').append('There was an unexpected error while processing your request.');

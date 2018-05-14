@@ -1,4 +1,5 @@
-[
+{
+  "listings": [
 	{
 		"Name": "2017 MINI COOPER CLUBMAN ALL4",
 		"Price": "$32,997.00",
@@ -24,3 +25,4 @@
 		"DriveTrain": "AWD"
 	}
 ]
+}
