@@ -275,6 +275,22 @@ ul {
   font-weight: 600;
 }
 
+/* AJAX JSON Response Styles */
+
+#name {
+  text-decoration: underline;
+}
+
+#price {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#photo {
+  height: 200px;
+  width: 300px;
+}
+
 /* Media Settings */
 
 
