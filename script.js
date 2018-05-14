@@ -15,7 +15,7 @@ $(document).ready(function () {
           var listing = $('#car-list');
           $('#name').append(listings[i].Name);
           $('#price').append(listings[i].Price);
-          $('#photo').append('<img>' + listings[i].Photo + '</img>');
+          $('#photo').append('<img src="' + listings[i].Photo + '"/>');
           $('#retailer').append(listings[i].Retailer);
           $('#kilometres').append(listings[i].Kilometres);
           $('#transmission').append(listings[i].Transmission);
